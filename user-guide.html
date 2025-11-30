@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - Crassus Pro</title>
+    <meta name="description" content="Complete user guide for Crassus Pro - Learn how to manage properties, generate invoices, track expenses, and prepare VAT reports.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crassus-orange': '#E85D04',
+                        'crassus-orange-light': '#F48C06',
+                        'crassus-orange-dark': '#D00000',
+                        'crassus-gold': '#FAA307',
+                        'apple-gray': '#1d1d1f',
+                        'apple-gray-light': '#6e6e73',
+                        'apple-gray-bg': '#f5f5f7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #F48C06 0%, #E85D04 100%);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        #guide-content h2 {
+            scroll-margin-top: 100px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #E85D04;
+        }
+        #guide-content h3 {
+            scroll-margin-top: 100px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #1d1d1f;
+        }
+        #guide-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #F48C06;
+        }
+        #guide-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        #guide-content ul, #guide-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        #guide-content li {
+            margin-bottom: 0.5rem;
+        }
+        #guide-content code {
+            background: #f5f5f7;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+        #guide-content pre {
+            background: #1d1d1f;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        #guide-content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        #guide-content strong {
+            font-weight: 600;
+            color: #E85D04;
+        }
+        #guide-content blockquote {
+            border-left: 4px solid #F48C06;
+            padding-left: 1rem;
+            margin-left: 0;
+            margin-bottom: 1rem;
+            color: #6e6e73;
+        }
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: #6e6e73;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .toc-link:hover {
+            color: #E85D04;
+        }
+        .toc-link.active {
+            color: #E85D04;
+            font-weight: 600;
+        }
+        #guide-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        #guide-content th, #guide-content td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        #guide-content th {
+            background: #f5f5f7;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white text-apple-gray">
+    
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="crassus-pro-tailwind.html" class="text-lg font-semibold text-crassus-orange hover:text-crassus-orange-dark transition">← Back to Home</a>
+                <h1 class="text-xl font-bold text-apple-gray hidden sm:block">User Guide</h1>
+                <div class="w-32 hidden sm:block"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-hero py-12 sm:py-16 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-5xl mb-4">🏛️</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Crassus Pro User Guide</h1>
+            <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
+                Complete guide to managing your property portfolio
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 sm:py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Sidebar TOC (Desktop) -->
+            <aside class="lg:w-64 flex-shrink-0">
+                <div class="lg:sticky lg:top-24 bg-apple-gray-bg rounded-2xl p-6 hidden lg:block">
+                    <h3 class="font-bold text-apple-gray mb-4 text-sm uppercase tracking-wide">Contents</h3>
+                    <nav id="toc" class="space-y-1 text-sm">
+                        <a href="#getting-started" class="toc-link">1. Getting Started</a>
+                        <a href="#adding-property" class="toc-link">2. Adding Properties</a>
+                        <a href="#managing-properties" class="toc-link">3. Managing Properties</a>
+                        <a href="#generating-invoices" class="toc-link">4. Generating Invoices</a>
+                        <a href="#tracking-expenses" class="toc-link">5. Tracking Expenses</a>
+                        <a href="#payment-management" class="toc-link">6. Payment Management</a>
+                        <a href="#vat-reporting" class="toc-link">7. VAT Reporting</a>
+                        <a href="#map-view" class="toc-link">8. Map View (Imperium)</a>
+                        <a href="#email-integration" class="toc-link">9. Email Integration</a>
+                        <a href="#tips-best-practices" class="toc-link">10. Tips & Best Practices</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 max-w-4xl">
+                <div id="guide-content" class="prose-custom">
+<h1 id="crassus-pro-user-guide">Crassus Pro User Guide</h1>
+<p><strong>Professional Property Management Made Simple</strong></p>
+<p>Welcome to Crassus Pro! This guide will walk you through everything you need to know to manage your properties, track rent payments, handle expenses, and prepare VAT reports.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-getting-started-initial-setup">Getting Started: Initial Setup</a></li>
+<li><a href="#2-adding-your-first-property">Adding Your First Property</a></li>
+<li><a href="#3-managing-properties">Managing Properties</a></li>
+<li><a href="#4-generating-invoices">Generating Invoices</a></li>
+<li><a href="#5-tracking-expenses">Tracking Expenses</a></li>
+<li><a href="#6-payment-management">Payment Management</a></li>
+<li><a href="#7-vat-reporting">VAT Reporting</a></li>
+<li><a href="#8-using-the-map-view-imperium">Using the Map View (Imperium)</a></li>
+<li><a href="#9-email-integration">Email Integration</a></li>
+<li><a href="#10-tips--best-practices">Tips &amp; Best Practices</a></li>
+</ol>
+<hr />
+<h2 id="1-getting-started-initial-setup">1. Getting Started: Initial Setup</h2>
+<p>Before you start adding properties, configure your business information in Settings. This information will appear on all your invoices and documents.</p>
+<h3 id="step-by-step-configure-settings">Step-by-Step: Configure Settings</h3>
+<ol>
+<li>
+<p><strong>Open Crassus Pro</strong> and tap the <strong>Settings</strong> icon (gear icon) in your property dashboard</p>
+</li>
+<li>
+<p><strong>Navigate to General Tab</strong> (should be selected by default)</p>
+</li>
+<li>
+<p><strong>Enter Landlord Information:</strong></p>
+</li>
+<li><strong>Company Name</strong>: Your business or personal name (e.g., "AC Property Management")</li>
+<li>
+<p><strong>Address</strong>: Your business address (this appears on invoices)</p>
+<ul>
+<li>Enter multiple lines for street, city, postal code</li>
+<li>Example:
+   <code>123 Main Street
+   Amsterdam, 1012 AB
+   Netherlands</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Enter Bank Information:</strong></p>
+</li>
+<li><strong>Bank Name</strong>: Your bank's name (e.g., "ING Bank")</li>
+<li>
+<p><strong>Account Number</strong>: Your IBAN or account number for rent payments</p>
+<ul>
+<li>This appears on invoices so tenants know where to send payments</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure VAT Settings:</strong></p>
+</li>
+<li><strong>VAT ID</strong>: Your business VAT identification number (required for VAT reports)</li>
+<li><strong>VAT Rate</strong>: Default VAT rate percentage (e.g., 21 for Netherlands)<ul>
+<li>You can adjust this per invoice if needed</li>
+</ul>
+</li>
+<li>
+<p><strong>Reporting Period</strong>: </p>
+<ul>
+<li><strong>Monthly</strong>: For businesses with monthly VAT filing</li>
+<li><strong>Quarterly</strong>: For businesses with quarterly VAT filing</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Invoice Preferences:</strong></p>
+</li>
+<li><strong>Invoice Language</strong>: Select your default language<ul>
+<li>Available: Dutch, English, German, French, Spanish, Italian</li>
+<li>You can change this per invoice when generating</li>
+</ul>
+</li>
+<li>
+<p><strong>Logo</strong> (Optional):</p>
+<ul>
+<li>Tap <strong>"Select Logo from Files"</strong></li>
+<li>Choose a logo image (PNG or JPEG)</li>
+<li>Logo appears on all invoices (recommended: 300×300px or larger)</li>
+<li>To remove logo later, tap <strong>"Remove Logo"</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Notifications:</strong></p>
+</li>
+<li><strong>Enable Notifications</strong>: Toggle ON to receive payment reminders</li>
+<li><strong>Send Invoices</strong>: Set which day of the month to send invoice reminders<ul>
+<li>Default: Day 1 (reminders sent on the 1st of each month)</li>
+<li>Adjust 1-28 days as needed for your billing cycle</li>
+</ul>
+</li>
+</ol>
+<p><strong>What Notifications Are Enabled:</strong></p>
+<p>When you turn on notifications, Crassus Pro will automatically send you the following alerts:</p>
+<ul>
+<li>
+<p><strong>Monthly Invoice Reminders</strong>: </p>
+<ul>
+<li>Sent on the day you specify (e.g., 1st of each month)</li>
+<li>Reminds you to send invoices to tenants</li>
+<li>One notification per month</li>
+</ul>
+</li>
+<li>
+<p><strong>Lease Expiration Alerts</strong>:</p>
+<ul>
+<li>Sent 30 days before lease end date</li>
+<li>Sent 7 days before lease end date</li>
+<li>Helps you plan for lease renewals or new tenants</li>
+</ul>
+</li>
+<li>
+<p><strong>Overdue Expense Notifications</strong>:</p>
+<ul>
+<li>Triggered when an expense passes its due date</li>
+<li>Sent at 9:00 AM on the day after due date</li>
+<li>Helps you stay on top of bills and payments</li>
+</ul>
+</li>
+<li>
+<p><strong>Upcoming Expense Reminders</strong>:</p>
+<ul>
+<li>Sent 3 days before expense due date</li>
+<li>Gives you time to prepare payment</li>
+<li>Prevents last-minute scrambling</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note</strong>: These notification types are standard and cannot be individually customized. You can only enable or disable all notifications using the master toggle. If you need to stop receiving notifications, simply turn off the "Enable Notifications" toggle in Settings.</p>
+<ol>
+<li><strong>Review About Section:</strong></li>
+<li>Check app version and last modified date</li>
+<li>
+<p>Useful for troubleshooting</p>
+</li>
+<li>
+<p><strong>Save Your Settings:</strong></p>
+</li>
+<li>Tap <strong>"Done"</strong> in the top-right corner</li>
+<li>All settings are automatically saved</li>
+</ol>
+<h3 id="initial-setup-checklist">Initial Setup Checklist</h3>
+<p>Before adding properties, ensure you've completed:</p>
+<ul>
+<li>✅ Company Name</li>
+<li>✅ Business Address</li>
+<li>✅ Bank Name and Account Number</li>
+<li>✅ VAT ID (if applicable)</li>
+<li>✅ VAT Rate (default percentage)</li>
+<li>✅ Invoice Language preference</li>
+<li>✅ Logo (optional but recommended)</li>
+<li>✅ Notification preferences</li>
+</ul>
+<p><strong>Important</strong>: You can update these settings at any time. Changes apply to new invoices going forward.</p>
+<hr />
+<h2 id="2-adding-your-first-property">2. Adding Your First Property</h2>
+<p>Now that your settings are configured, let's add your first rental property.</p>
+<h3 id="step-by-step-add-a-property">Step-by-Step: Add a Property</h3>
+<ol>
+<li><strong>Navigate to Properties Tab</strong></li>
+<li>Tap <strong>"Properties"</strong> in the bottom navigation bar</li>
+<li>
+<p>You'll see the property dashboard (empty initially)</p>
+</li>
+<li>
+<p><strong>Tap the "+" Button</strong></p>
+</li>
+<li>Located in the top-right corner</li>
+<li>
+<p>This opens the "Add Property" form</p>
+</li>
+<li>
+<p><strong>Enter Property Details:</strong></p>
+</li>
+</ol>
+<p><strong>Basic Information:</strong>
+   - <strong>Property Name</strong>: Give it a memorable name
+     - Example: "Main Street Apartment 2B" or "Downtown Office Space"
+   - <strong>Address</strong>: Enter the complete property address
+     - This will be used for mapping and invoices
+     - Be specific: street number, street name, city, postal code
+     - Example: "456 Canal Street, Amsterdam 1012 AB, Netherlands"</p>
+<p><strong>Financial Details:</strong>
+   - <strong>Lease Rate</strong>: Monthly rent amount (excluding VAT)
+     - Example: €1,500.00
+     - Enter numbers only, no currency symbol
+   - <strong>VAT Amount</strong>: VAT on the rent
+     - Automatically calculated based on your default VAT rate
+     - You can manually adjust if needed
+     - Example: €315.00 (21% of €1,500)</p>
+<p><strong>Tenant Information:</strong>
+   - <strong>Lessee Name</strong>: Tenant's full name
+     - Example: "John Smith"
+   - <strong>Lessee Email</strong>: Tenant's email address
+     - <strong>Important</strong>: Required for sending invoices via email
+     - Example: "john.smith@email.com"
+   - <strong>Lessee Mailing Address</strong>: Tenant's billing address
+     - Used for formal correspondence
+     - Can be same as property address or different
+     - Example:
+       <code>John Smith
+       456 Canal Street, Apt 2B
+       Amsterdam 1012 AB</code></p>
+<p><strong>Lease Terms:</strong>
+   - <strong>Lease Start Date</strong>: When the lease begins
+     - Tap the date field to open calendar picker
+     - Example: January 1, 2024
+   - <strong>Lease End Date</strong>: When the lease expires
+     - Used for tracking lease expiration
+     - Example: December 31, 2024</p>
+<p><strong>Payment Schedule:</strong>
+   - <strong>Payment Day</strong>: Day of month rent is due
+     - Example: 1 (rent due on the 1st of each month)
+     - Used for automatic invoice reminders
+     - Can be 1-28</p>
+<ol>
+<li><strong>Review Your Information</strong></li>
+<li>Scroll through the form</li>
+<li>Verify all details are correct</li>
+<li>
+<p>Check email address carefully (needed for invoicing)</p>
+</li>
+<li>
+<p><strong>Save the Property</strong></p>
+</li>
+<li>Tap <strong>"Add Property"</strong> button at the bottom</li>
+<li>Property is immediately added to your portfolio</li>
+</ol>
+<h3 id="what-happens-next">What Happens Next?</h3>
+<p>After adding a property:
+- ✅ Property appears in your Properties dashboard
+- ✅ Property card shows key information (name, address, rent)
+- ✅ Monthly invoices can be generated
+- ✅ Property appears on the Map view (Imperium)
+- ✅ System begins tracking payment due dates</p>
+<h3 id="adding-multiple-properties">Adding Multiple Properties</h3>
+<p>Repeat the process above for each property you manage. You can add unlimited properties with your Crassus Pro subscription.</p>
+<p><strong>Tip</strong>: Add properties in logical order (by location, acquisition date, or alphabetically) for easier management.</p>
+<hr />
+<h2 id="3-managing-properties">3. Managing Properties</h2>
+<p>Once you've added properties, you can view, edit, and manage them from the Properties dashboard.</p>
+<h3 id="viewing-property-details">Viewing Property Details</h3>
+<ol>
+<li><strong>From Properties Tab</strong>, tap on any property card</li>
+<li><strong>Property Detail View</strong> opens, showing:</li>
+<li>Property name and full address</li>
+<li>Monthly lease rate and VAT</li>
+<li>Lessee information</li>
+<li>Lease start and end dates</li>
+<li>Interactive map showing property location</li>
+<li>List of all invoices for this property</li>
+</ol>
+<h3 id="editing-a-property">Editing a Property</h3>
+<ol>
+<li><strong>Open Property Detail View</strong> (tap property card)</li>
+<li><strong>Tap "Edit" button</strong> (top-right, next to trash icon)</li>
+<li><strong>Modify any field</strong>:</li>
+<li>Update rent amount (increases/decreases)</li>
+<li>Change tenant information</li>
+<li>Update lease dates</li>
+<li>Adjust payment day</li>
+<li><strong>Tap "Update Property"</strong> to save changes</li>
+</ol>
+<p><strong>Note</strong>: Changes to rent amounts apply to future invoices. Existing invoices are not modified.</p>
+<h3 id="deleting-a-property">Deleting a Property</h3>
+<p><strong>⚠️ Warning</strong>: Deleting a property also deletes all associated invoices and cannot be undone.</p>
+<ol>
+<li><strong>Open Property Detail View</strong></li>
+<li><strong>Tap trash icon</strong> (top-right corner)</li>
+<li><strong>Confirm deletion</strong> in the alert dialog</li>
+<li>Property and all invoices are permanently removed</li>
+</ol>
+<p><strong>Best Practice</strong>: Only delete properties that are no longer relevant. For ended leases, consider keeping the property with a note in the name (e.g., "Main St Apt 2B [ENDED]").</p>
+<h3 id="property-dashboard-overview">Property Dashboard Overview</h3>
+<p>The main Properties dashboard shows:
+- <strong>Property Cards</strong>: Each property displayed as a card
+- <strong>Key Info</strong>: Name, address, monthly rent at a glance
+- <strong>Status Indicators</strong>: Visual cues for payment status
+- <strong>Quick Access</strong>: Tap any card to see full details</p>
+<p><strong>Tip</strong>: Properties are listed in the order they were added. The most recently added appears at the bottom.</p>
+<hr />
+<h2 id="4-generating-invoices">4. Generating Invoices</h2>
+<p>Crassus Pro automatically tracks monthly rent invoices for each property. Here's how to create and manage them.</p>
+<h3 id="understanding-invoice-workflow">Understanding Invoice Workflow</h3>
+<p><strong>Automatic Invoice Creation:</strong>
+- Invoices are <strong>automatically generated</strong> for each property
+- One invoice per month, per property
+- Invoice date: Based on payment day you set
+- Due date: <strong>Last day of the period prior to the period being invoiced</strong>
+  - Example: Invoice for January rent has due date of December 31
+  - Example: Invoice for March rent has due date of February 28/29
+  - This is a prepayment model - rent is due before the rental period begins</p>
+<h3 id="viewing-invoices">Viewing Invoices</h3>
+<ol>
+<li><strong>Navigate to Invoices Tab</strong> (bottom navigation)</li>
+<li><strong>View all invoices</strong> across all properties</li>
+<li><strong>Filter/Sort</strong> (if available in your view)</li>
+<li><strong>Color-coded status</strong>:</li>
+<li>🟢 <strong>Green</strong>: Paid</li>
+<li>🟠 <strong>Orange</strong>: Due soon (within 3 days)</li>
+<li>🔴 <strong>Red</strong>: Overdue</li>
+<li>⚪ <strong>Gray</strong>: Future/not due yet</li>
+</ol>
+<h3 id="generating-a-new-invoice">Generating a New Invoice</h3>
+<p><strong>Method 1: From Property Detail</strong>
+1. Open <strong>Property Detail View</strong>
+2. Scroll to <strong>Invoices section</strong>
+3. Tap <strong>"Generate Invoice"</strong> or "+" button
+4. Invoice is created with property details pre-filled</p>
+<p><strong>Method 2: From Invoice History</strong>
+1. Go to <strong>Invoices Tab</strong>
+2. Tap <strong>"+"</strong> button (top-right)
+3. Select property from list
+4. Invoice is automatically created</p>
+<h3 id="invoice-details">Invoice Details</h3>
+<p>Each invoice includes:
+- <strong>Invoice Number</strong>: Auto-generated unique number
+- <strong>Property Information</strong>: Address and details
+- <strong>Lessee Information</strong>: Tenant name and address
+- <strong>Lease Rate</strong>: Monthly rent amount
+- <strong>VAT Amount</strong>: Calculated tax
+- <strong>Total Amount</strong>: Rent + VAT
+- <strong>Invoice Date</strong>: When invoice was issued
+- <strong>Due Date</strong>: Last day of the month before the rental period
+  - Ensures prepayment - rent must be paid before period begins
+  - Example: February rent due on January 31
+- <strong>Payment Status</strong>: Paid/Unpaid
+- <strong>Your Business Info</strong>: From Settings (landlord details, bank info)</p>
+<h3 id="customizing-an-invoice">Customizing an Invoice</h3>
+<p>You can't edit auto-generated invoices, but you can:
+- Regenerate with updated property details
+- Adjust VAT rates in property settings
+- Change invoice language before generating PDF</p>
+<h3 id="pdf-generation">PDF Generation</h3>
+<p><strong>Creating Invoice PDFs:</strong></p>
+<ol>
+<li><strong>Open Invoice</strong> (from Invoices list or Property Detail)</li>
+<li><strong>Tap "View PDF"</strong> or PDF icon</li>
+<li><strong>PDF generates instantly</strong> with:</li>
+<li>Your logo (if configured)</li>
+<li>Professional formatting</li>
+<li>All invoice details</li>
+<li>
+<p>Payment instructions (bank details)</p>
+</li>
+<li>
+<p><strong>Choose Action</strong>:</p>
+</li>
+<li><strong>Share</strong>: Send via email, message, or AirDrop</li>
+<li><strong>Print</strong>: Print directly or save as PDF</li>
+<li><strong>Save</strong>: Save to Files app</li>
+</ol>
+<p><strong>Multi-Language Support:</strong>
+- Invoices generate in your default language (from Settings)
+- Change language per property for international tenants
+- Supports: Dutch, English, German, French, Spanish, Italian</p>
+<h3 id="invoice-templates">Invoice Templates</h3>
+<p>Invoices follow a professional template including:
+- Header with your business name and logo
+- Invoice number and dates prominently displayed
+- Clear itemization (lease rate + VAT)
+- Payment details (bank account)
+- Lessee information
+- Property address reference</p>
+<p><strong>Tip</strong>: Review a test invoice PDF before sending to ensure all information appears correctly.</p>
+<hr />
+<h2 id="5-tracking-expenses">5. Tracking Expenses</h2>
+<p>Track all property-related expenses for tax purposes and financial reporting.</p>
+<h3 id="adding-an-expense">Adding an Expense</h3>
+<ol>
+<li><strong>Navigate to Expenses Tab</strong> (bottom navigation)</li>
+<li><strong>Tap "+" button</strong> (top-right)</li>
+<li><strong>Enter Expense Details</strong>:</li>
+</ol>
+<p><strong>Basic Information:</strong>
+   - <strong>Description</strong>: What the expense is for
+     - Example: "Plumbing repair", "Property tax Q1", "Insurance premium"
+   - <strong>Amount</strong>: Total expense amount (including VAT if applicable)
+     - Example: €250.00
+   - <strong>VAT Amount</strong>: VAT portion of expense (if applicable)
+     - Used for VAT reporting
+     - Can leave as 0 if no VAT</p>
+<p><strong>Categorization:</strong>
+   - <strong>Property</strong>: Which property this expense relates to
+     - Select from dropdown list of your properties
+     - Or select "General" for non-property-specific expenses
+   - <strong>Category</strong>: Type of expense
+     - Examples: Maintenance, Utilities, Insurance, Tax, etc.</p>
+<p><strong>Timing:</strong>
+   - <strong>Date</strong>: When expense was incurred
+   - <strong>Due Date</strong>: When payment is due (if unpaid)</p>
+<p><strong>Documentation:</strong>
+   - <strong>Take Photo</strong>: Capture receipt/invoice with camera
+     - Tap camera icon
+     - Take photo of physical receipt
+     - Photo stored with expense
+   - <strong>Scan Document</strong>: Use OCR to extract info from receipt
+     - Experimental feature
+     - Helps auto-fill amount and details</p>
+<p><strong>Payment Status:</strong>
+   - <strong>Paid</strong>: Check if already paid
+   - <strong>Unpaid</strong>: Leave unchecked if payment pending</p>
+<ol>
+<li><strong>Tap "Add Expense"</strong> to save</li>
+</ol>
+<h3 id="viewing-expenses">Viewing Expenses</h3>
+<p><strong>Expense List View:</strong>
+- All expenses across all properties
+- Sorted by due date (soonest first)
+- Color-coded status:
+  - 🟢 <strong>Paid</strong>: No action needed
+  - 🟠 <strong>Due Soon</strong>: Within 3 days
+  - 🔴 <strong>Overdue</strong>: Past due date</p>
+<p><strong>Expense Detail View:</strong>
+1. Tap any expense to see full details
+2. View attached photos/receipts
+3. See expense history and notes</p>
+<h3 id="editing-an-expense">Editing an Expense</h3>
+<ol>
+<li><strong>Open Expense Detail View</strong></li>
+<li><strong>Tap "Edit"</strong> (top-right)</li>
+<li><strong>Modify fields</strong> as needed</li>
+<li><strong>Tap "Update"</strong> to save changes</li>
+</ol>
+<h3 id="marking-expenses-as-paid">Marking Expenses as Paid</h3>
+<p><strong>Method 1: From Expense Detail</strong>
+1. Open expense
+2. Toggle <strong>"Paid"</strong> switch to ON
+3. Payment status updates immediately</p>
+<p><strong>Method 2: Quick Toggle</strong>
+1. Some views allow tap-to-toggle paid status
+2. Expense turns green when marked paid</p>
+<p><strong>Important</strong>: Marking an expense as paid updates financial reports and VAT calculations.</p>
+<h3 id="deleting-an-expense">Deleting an Expense</h3>
+<ol>
+<li><strong>Open Expense Detail View</strong></li>
+<li><strong>Tap trash icon</strong> (top-right)</li>
+<li><strong>Confirm deletion</strong></li>
+<li>Expense is permanently removed</li>
+</ol>
+<h3 id="expense-categories">Expense Categories</h3>
+<p>Common expense categories:
+- <strong>Maintenance &amp; Repairs</strong>: Plumbing, electrical, painting
+- <strong>Utilities</strong>: Water, gas, electricity (if you pay)
+- <strong>Property Tax</strong>: Annual/quarterly property taxes
+- <strong>Insurance</strong>: Property insurance premiums
+- <strong>Management Fees</strong>: Property management services
+- <strong>Legal &amp; Professional</strong>: Lawyer, accountant fees
+- <strong>Marketing</strong>: Advertising for tenants
+- <strong>HOA Fees</strong>: Homeowners association dues
+- <strong>Mortgage Interest</strong>: Loan interest (tax-deductible)
+- <strong>Other</strong>: Miscellaneous property expenses</p>
+<p><strong>Tip</strong>: Consistent categorization helps with year-end tax preparation and financial analysis.</p>
+<hr />
+<h2 id="6-payment-management">6. Payment Management</h2>
+<p>Efficiently track rent payments and manage overdue invoices.</p>
+<h3 id="marking-invoices-as-paid">Marking Invoices as Paid</h3>
+<p>When you receive rent payment:</p>
+<p><strong>Method 1: From Invoice Detail</strong>
+1. <strong>Open Invoice</strong> (from Invoices tab or Property Detail)
+2. <strong>Toggle "Paid" switch</strong> to ON
+3. Invoice status changes to Paid (green)
+4. Invoice removed from overdue/due soon lists</p>
+<p><strong>Method 2: Bulk Action</strong> (if available)
+1. From Invoices list
+2. Swipe left on invoice
+3. Tap "Mark Paid"</p>
+<h3 id="payment-reminders-notifications">Payment Reminders &amp; Notifications</h3>
+<p>Crassus Pro helps you stay on top of payments with automatic notifications:</p>
+<p><strong>Automatic Notifications (when enabled in Settings):</strong></p>
+<ol>
+<li><strong>Monthly Invoice Reminders</strong></li>
+<li>Sent on the day you specify in Settings (default: 1st of month)</li>
+<li>Reminds you to generate and send invoices to tenants</li>
+<li>
+<p>One notification per month</p>
+</li>
+<li>
+<p><strong>Lease Expiration Alerts</strong></p>
+</li>
+<li>First alert: 30 days before lease end date</li>
+<li>Second alert: 7 days before lease end date</li>
+<li>
+<p>Plan ahead for renewals or finding new tenants</p>
+</li>
+<li>
+<p><strong>Overdue Expense Notifications</strong></p>
+</li>
+<li>Triggered when expense passes due date</li>
+<li>Sent at 9:00 AM the day after due date</li>
+<li>
+<p>Prevents missed bill payments</p>
+</li>
+<li>
+<p><strong>Upcoming Expense Reminders</strong></p>
+</li>
+<li>Sent 3 days before expense due date</li>
+<li>Time to prepare payment</li>
+<li>Avoid late fees</li>
+</ol>
+<p><strong>Note</strong>: These notification types are standard and work together as a set. You cannot customize individual notification types - they are all enabled or disabled together via the "Enable Notifications" toggle in Settings.</p>
+<p><strong>Managing Notifications:</strong>
+1. Go to <strong>Settings &gt; General &gt; Notifications</strong>
+2. Toggle <strong>"Enable Notifications"</strong> (master switch for all)
+3. Adjust <strong>"Send Invoices"</strong> day to match your billing cycle
+4. System notifications appear on your device lock screen and notification center</p>
+<p><strong>Important</strong>: Also enable notifications in iOS Settings:
+- Settings &gt; Notifications &gt; Crassus Pro
+- Allow Notifications: ON
+- Set alert style (Banner recommended)</p>
+<h3 id="sending-payment-reminders">Sending Payment Reminders</h3>
+<p><strong>Via Email:</strong>
+1. <strong>Open Invoice</strong>
+2. <strong>Tap "Send Email"</strong> or envelope icon
+3. <strong>Email compose window opens</strong> with:
+   - Pre-filled recipient (lessee email)
+   - Subject line (e.g., "Rent Invoice for [Property]")
+   - Invoice details in email body
+   - PDF attachment option
+4. <strong>Customize message</strong> if needed
+5. <strong>Tap "Send"</strong></p>
+<p><strong>Email Content Includes:</strong>
+- Invoice number and amount
+- Due date
+- Payment instructions
+- Bank account details
+- Property address reference
+- Professional formatting</p>
+<p><strong>Tip</strong>: Send reminders 3-5 days before due date for best results. Since rent is due on the last day of the previous month (prepayment model), consider sending reminders around the 25th-27th of the month to give tenants time to prepare payment.</p>
+<h3 id="tracking-payment-history">Tracking Payment History</h3>
+<p><strong>For Each Property:</strong>
+1. Open <strong>Property Detail View</strong>
+2. Scroll to <strong>Invoices section</strong>
+3. See complete payment history
+4. Green checkmarks indicate paid invoices
+5. Red/orange indicators show unpaid</p>
+<p><strong>Overall Payment Status:</strong>
+- <strong>Invoices Tab</strong>: See all invoices across properties
+- <strong>Badge Count</strong>: Tab shows number of overdue invoices
+- <strong>Dashboard Widgets</strong>: Quick glance at payment status</p>
+<h3 id="handling-late-payments">Handling Late Payments</h3>
+<p><strong>Best Practices:</strong>
+1. <strong>Send Reminder</strong>: Email tenant 2-3 days after due date
+   - Remember: Due dates are end of previous month (prepayment model)
+   - Example: If January rent due Dec 31, follow up Jan 2-3
+2. <strong>Follow Up</strong>: Call or send second email after 7 days
+3. <strong>Document</strong>: Keep record of communications
+4. <strong>Mark Paid</strong>: Update immediately when payment received</p>
+<p><strong>Using Crassus Pro:</strong>
+- Overdue invoices highlighted in red
+- Badge counts keep you informed
+- Easy email sending for reminders
+- Track all communications via email</p>
+<hr />
+<h2 id="7-vat-reporting">7. VAT Reporting</h2>
+<p>Generate comprehensive VAT reports for tax filing compliance.</p>
+<h3 id="understanding-vat-in-crassus-pro">Understanding VAT in Crassus Pro</h3>
+<p><strong>What's Tracked:</strong>
+- <strong>VAT Collected</strong>: VAT on rent invoices (income)
+- <strong>VAT Paid</strong>: VAT on property expenses (deductible)
+- <strong>Net VAT</strong>: Amount owed to/refundable from tax authority</p>
+<p><strong>Reporting Periods:</strong>
+- <strong>Monthly</strong>: Reports for each calendar month
+- <strong>Quarterly</strong>: Reports for Q1, Q2, Q3, Q4
+- Set in Settings &gt; General &gt; VAT &gt; Reporting Period</p>
+<h3 id="generating-a-vat-report">Generating a VAT Report</h3>
+<ol>
+<li><strong>Navigate to VAT Tab</strong> (bottom navigation)</li>
+<li><strong>Select Reporting Period</strong>:</li>
+<li><strong>Monthly</strong>: Choose month and year</li>
+<li><strong>Quarterly</strong>: Choose quarter (Q1-Q4) and year</li>
+<li><strong>Report Generates Automatically</strong> showing:</li>
+</ol>
+<p><strong>Income (VAT Collected):</strong>
+   - All paid invoices in the period
+   - Total rent income
+   - Total VAT collected on rent</p>
+<p><strong>Expenses (VAT Paid):</strong>
+   - All paid expenses in the period
+   - Total expense amount
+   - Total VAT paid on expenses</p>
+<p><strong>Summary:</strong>
+   - <strong>Gross VAT</strong>: Total VAT collected
+   - <strong>Deductible VAT</strong>: Total VAT paid
+   - <strong>Net VAT Payable</strong>: Amount owed to tax authority
+     - Positive = You owe VAT
+     - Negative = You're owed refund</p>
+<h3 id="viewing-report-details">Viewing Report Details</h3>
+<p><strong>Report Breakdown:</strong>
+- <strong>Invoices Section</strong>: 
+  - List of all paid invoices in period
+  - Property name, invoice number, date
+  - Rent amount and VAT amount
+  - Running total</p>
+<ul>
+<li><strong>Expenses Section</strong>:</li>
+<li>List of all paid expenses in period</li>
+<li>Description, property, date</li>
+<li>Expense amount and VAT amount</li>
+<li>
+<p>Running total</p>
+</li>
+<li>
+<p><strong>Summary Box</strong>:</p>
+</li>
+<li>Key figures prominently displayed</li>
+<li>Net VAT calculation</li>
+<li>Ready for tax form entry</li>
+</ul>
+<h3 id="exporting-vat-data">Exporting VAT Data</h3>
+<p><strong>CSV Export for Accountants:</strong></p>
+<ol>
+<li><strong>From VAT Report</strong>, tap <strong>"Export CSV"</strong> or share icon</li>
+<li><strong>Choose Export Options</strong>:</li>
+<li>Invoices only</li>
+<li>Expenses only</li>
+<li>Both (recommended)</li>
+<li><strong>CSV file generated</strong> with:</li>
+<li>Date, description, property</li>
+<li>Amounts and VAT</li>
+<li>Invoice/expense numbers</li>
+<li>
+<p>Formatted for spreadsheet import</p>
+</li>
+<li>
+<p><strong>Share CSV</strong>:</p>
+</li>
+<li>Email to accountant</li>
+<li>Save to Files/iCloud</li>
+<li>Open in Excel/Numbers</li>
+</ol>
+<p><strong>CSV Format:</strong></p>
+<div class="codehilite"><pre><span></span><code>Date,Type,Property,Description,Amount,VAT,Total,Status
+2024-01-01,Invoice,Main St Apt,Monthly Rent,1500.00,315.00,1815.00,Paid
+2024-01-15,Expense,Main St Apt,Plumbing Repair,200.00,42.00,242.00,Paid
+</code></pre></div>
+
+<h3 id="filing-your-vat-return">Filing Your VAT Return</h3>
+<p><strong>Using Crassus Pro Reports:</strong></p>
+<ol>
+<li><strong>Generate report</strong> for filing period</li>
+<li><strong>Note key figures</strong>:</li>
+<li>Box 1a: VAT collected on services (rent)</li>
+<li>Box 4b: VAT paid on expenses</li>
+<li>Net VAT: Your payment/refund amount</li>
+<li><strong>Enter into tax authority system</strong> (e.g., Belastingdienst in NL)</li>
+<li><strong>Keep CSV export</strong> for records</li>
+<li><strong>Mark filing complete</strong> (note in app or external system)</li>
+</ol>
+<p><strong>Important</strong>: Crassus Pro provides data for your VAT return but doesn't file directly with tax authorities. Always verify calculations with your accountant.</p>
+<h3 id="vat-report-best-practices">VAT Report Best Practices</h3>
+<p><strong>Monthly Reviews:</strong>
+- Generate report at end of each month
+- Verify all invoices marked as paid correctly
+- Check all expenses categorized properly
+- Review VAT amounts for accuracy</p>
+<p><strong>Before Filing:</strong>
+- Double-check reporting period matches filing period
+- Ensure all transactions in period are complete
+- Verify paid/unpaid status is current
+- Export CSV for backup</p>
+<p><strong>Record Keeping:</strong>
+- Save CSV exports for each filing period
+- Keep for minimum 7 years (tax requirement)
+- Store with tax return documentation</p>
+<h3 id="troubleshooting-vat-reports">Troubleshooting VAT Reports</h3>
+<p><strong>Missing Invoices/Expenses:</strong>
+- Check date range - must fall within reporting period
+- Verify status is "Paid" - only paid items included
+- Ensure property is selected correctly</p>
+<p><strong>Incorrect VAT Amounts:</strong>
+- Review VAT rate in Settings
+- Check individual invoice/expense VAT amounts
+- Update and regenerate report</p>
+<p><strong>Questions About Filing:</strong>
+- Consult with tax professional
+- Verify local VAT rules and requirements
+- Crassus Pro provides data, not tax advice</p>
+<hr />
+<h2 id="8-using-the-map-view-imperium">8. Using the Map View (Imperium)</h2>
+<p>Visualize your entire property portfolio on an interactive map.</p>
+<h3 id="accessing-map-view">Accessing Map View</h3>
+<ol>
+<li><strong>Tap "Imperium" tab</strong> (globe icon in bottom navigation)</li>
+<li><strong>Map loads</strong> showing all your properties</li>
+</ol>
+<h3 id="understanding-the-map">Understanding the Map</h3>
+<p><strong>Property Markers:</strong>
+Each property appears as a colored pin on the map:
+- 🟢 <strong>Green</strong>: All rent paid, no issues
+- 🟠 <strong>Orange</strong>: Payment due soon (within 3 days)
+- 🔴 <strong>Red</strong>: Overdue payment
+- <strong>Pin Location</strong>: Exact property address</p>
+<p><strong>Map Features:</strong>
+- <strong>Zoom</strong>: Pinch to zoom in/out
+- <strong>Pan</strong>: Drag to move around map
+- <strong>Satellite/Standard</strong>: Toggle map style (if available)
+- <strong>User Location</strong>: Shows your current location (if enabled)</p>
+<h3 id="interacting-with-properties">Interacting with Properties</h3>
+<ol>
+<li><strong>Tap any property pin</strong> on map</li>
+<li><strong>Callout appears</strong> showing:</li>
+<li>Property name</li>
+<li>Address</li>
+<li>Current rent amount</li>
+<li>Payment status</li>
+<li><strong>Tap callout</strong> to open full Property Detail View</li>
+</ol>
+<h3 id="map-use-cases">Map Use Cases</h3>
+<p><strong>Portfolio Overview:</strong>
+- See geographic distribution of properties
+- Identify clusters (areas where you own multiple)
+- Plan maintenance routes efficiently</p>
+<p><strong>Payment Status at a Glance:</strong>
+- Quickly see which properties need attention
+- Red pins = immediate action needed
+- Color coding helps prioritize</p>
+<p><strong>Property Tours:</strong>
+- Show potential investors your portfolio
+- Demonstrate geographic diversification
+- Professional presentation tool</p>
+<p><strong>Route Planning:</strong>
+- Plan property inspection routes
+- Minimize travel time between properties
+- Identify nearby properties for combined visits</p>
+<h3 id="map-tips">Map Tips</h3>
+<ul>
+<li><strong>Keep addresses accurate</strong>: Map precision depends on correct addresses</li>
+<li><strong>Use full addresses</strong>: Include street number, city, postal code</li>
+<li><strong>Check pin placement</strong>: Verify properties appear in correct locations</li>
+<li><strong>Update regularly</strong>: Map refreshes when properties added/edited</li>
+</ul>
+<hr />
+<h2 id="9-email-integration">9. Email Integration</h2>
+<p>Send invoices and communicate with tenants directly from Crassus Pro.</p>
+<h3 id="email-prerequisites">Email Prerequisites</h3>
+<p><strong>Setup Requirements:</strong>
+- Tenant email addresses must be entered in Property details
+- iOS Mail app configured on your device
+- Email account active and working</p>
+<h3 id="sending-invoice-emails">Sending Invoice Emails</h3>
+<p><strong>From Invoice Detail View:</strong></p>
+<ol>
+<li><strong>Open any invoice</strong> (Invoices tab or Property Detail)</li>
+<li><strong>Tap "Send Email"</strong> button or envelope icon</li>
+<li><strong>Email compose window opens</strong> with:</li>
+<li><strong>To</strong>: Lessee email (pre-filled)</li>
+<li><strong>Subject</strong>: "Rent Invoice for [Property Name] - [Month/Year]"</li>
+<li>
+<p><strong>Body</strong>: Professional email template including:</p>
+<ul>
+<li>Greeting</li>
+<li>Invoice details (amount, due date)</li>
+<li>Payment instructions</li>
+<li>Bank account information</li>
+<li>Property address</li>
+<li>Closing signature</li>
+</ul>
+</li>
+<li>
+<p><strong>Customize email</strong> (optional):</p>
+</li>
+<li>Edit subject line</li>
+<li>Add personal message</li>
+<li>Modify payment instructions</li>
+<li>
+<p>Add CC/BCC recipients</p>
+</li>
+<li>
+<p><strong>Attach PDF</strong> (recommended):</p>
+</li>
+<li>PDF invoice automatically attached</li>
+<li>Professional, formal documentation</li>
+<li>
+<p>Contains all invoice details</p>
+</li>
+<li>
+<p><strong>Tap "Send"</strong></p>
+</li>
+<li>Email sent immediately</li>
+<li>Copy saved in Mail app Sent folder</li>
+</ol>
+<h3 id="email-templates">Email Templates</h3>
+<p><strong>Standard Invoice Email:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Dear</span><span class="w"> </span><span class="p">[</span><span class="n">Lessee</span><span class="w"> </span><span class="n">Name</span><span class="p">],</span>
+
+<span class="n">Please</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">attached</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">rent</span><span class="w"> </span><span class="n">invoice</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">[</span><span class="n">Property</span><span class="w"> </span><span class="n">Address</span><span class="p">].</span>
+
+<span class="n">Invoice</span><span class="w"> </span><span class="n">Details</span><span class="o">:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Invoice</span><span class="w"> </span><span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="err">#</span><span class="p">[</span><span class="n">Number</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Invoice</span><span class="w"> </span><span class="n">Date</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">Date</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Amount</span><span class="w"> </span><span class="n">Due</span><span class="o">:</span><span class="w"> </span><span class="err">€</span><span class="p">[</span><span class="n">Amount</span><span class="p">]</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Due</span><span class="w"> </span><span class="n">Date</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="n">Due</span><span class="w"> </span><span class="n">Date</span><span class="p">]</span>
+
+<span class="n">Payment</span><span class="w"> </span><span class="n">Instructions</span><span class="o">:</span>
+<span class="n">Please</span><span class="w"> </span><span class="n">transfer</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="n">to</span><span class="o">:</span>
+<span class="nl">Bank</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Your</span><span class="w"> </span><span class="n">Bank</span><span class="w"> </span><span class="n">Name</span><span class="p">]</span>
+<span class="nl">Account</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Your</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="n">Number</span><span class="p">]</span>
+<span class="nl">Reference</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">Invoice</span><span class="w"> </span><span class="n">Number</span><span class="p">]</span>
+
+<span class="n">Thank</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">prompt</span><span class="w"> </span><span class="n">payment</span><span class="p">.</span>
+
+<span class="n">Best</span><span class="w"> </span><span class="n">regards</span><span class="p">,</span>
+<span class="p">[</span><span class="n">Your</span><span class="w"> </span><span class="n">Company</span><span class="w"> </span><span class="n">Name</span><span class="p">]</span>
+</code></pre></div>
+
+<h3 id="tracking-sent-emails">Tracking Sent Emails</h3>
+<p><strong>Email History:</strong>
+- All sent emails stored in iOS Mail app
+- Check Sent folder for confirmation
+- Search by recipient or subject</p>
+<p><strong>Follow-Up:</strong>
+- Mark calendar for follow-up
+- Check if payment received
+- Send reminder if needed</p>
+<h3 id="bulk-email-sending">Bulk Email Sending</h3>
+<p>Currently, Crassus Pro sends emails individually. For multiple tenants:</p>
+<ol>
+<li><strong>Open each invoice</strong> separately</li>
+<li><strong>Send email</strong> one at a time</li>
+<li><strong>Customize</strong> each as needed</li>
+</ol>
+<p><strong>Tip</strong>: Schedule time monthly (e.g., 1st of month) to send all invoices at once.</p>
+<h3 id="email-troubleshooting">Email Troubleshooting</h3>
+<p><strong>Email Won't Send:</strong>
+- Verify iOS Mail app is configured
+- Check internet connection
+- Ensure email address is valid
+- Check spam/junk folder (recipient side)</p>
+<p><strong>Missing Email Addresses:</strong>
+- Edit property to add lessee email
+- Email address required for sending
+- Verify correct format (name@domain.com)</p>
+<p><strong>Customizing Templates:</strong>
+- Templates are built-in, not customizable
+- Edit email body before sending
+- Save custom text as note for future reference</p>
+<hr />
+<h2 id="10-tips-best-practices">10. Tips &amp; Best Practices</h2>
+<h3 id="monthly-workflow">Monthly Workflow</h3>
+<p><strong>Important: Understanding the Prepayment Model</strong>
+Crassus Pro uses a prepayment invoicing system. This means rent for each month is due on the last day of the previous month. For example:
+- January rent → Due December 31
+- February rent → Due January 31
+- March rent → Due February 28/29</p>
+<p>This is standard practice in many rental markets and ensures tenants pay before occupying the property for that period.</p>
+<p><strong>Beginning of Month (Day 1-3):</strong>
+1. ✅ Generate invoices for all properties (if not auto-generated)
+2. ✅ Review invoice details for accuracy
+3. ✅ Send invoices via email to all tenants
+4. ✅ Set calendar reminders for follow-up</p>
+<p><strong>Mid-Month (Day 7-10):</strong>
+1. ✅ Check payment status in Invoices tab
+2. ✅ Send reminders for overdue invoices
+3. ✅ Mark paid invoices as received
+4. ✅ Add any new expenses</p>
+<p><strong>End of Month (Day 25-30):</strong>
+1. ✅ Send reminders for upcoming month's rent (due last day of current month)
+2. ✅ Final payment status check for current period
+3. ✅ Follow up on any remaining overdue from previous periods
+4. ✅ Review expenses for month
+5. ✅ Generate VAT report (if monthly filing)
+6. ✅ Prepare next month's invoices (to be sent early next month)</p>
+<h3 id="organization-tips">Organization Tips</h3>
+<p><strong>Understanding Invoice Timing:</strong>
+- Crassus Pro uses a <strong>prepayment model</strong> for rent
+- Rent for each month is due on the <strong>last day of the previous month</strong>
+- Example: March rent is due February 28/29
+- This is standard practice in many rental markets
+- Plan your communication and follow-ups accordingly</p>
+<p><strong>Property Naming:</strong>
+- Use consistent format: "[Location] - [Unit]"
+- Examples: "Amsterdam Center - Apt 3B", "Rotterdam South - Office 101"
+- Makes searching easier</p>
+<p><strong>Expense Documentation:</strong>
+- Always attach receipt photos
+- Include invoice numbers in descriptions
+- Use consistent categories
+- Date expenses when incurred, not when paid</p>
+<p><strong>Financial Records:</strong>
+- Export VAT CSV monthly for backup
+- Keep PDF copies of all invoices
+- Save to iCloud/Dropbox for redundancy
+- Maintain 7+ years for tax purposes</p>
+<h3 id="time-saving-features">Time-Saving Features</h3>
+<p><strong>Notifications:</strong>
+- Enable to never miss payment dates
+- Adjust timing to match your workflow
+- Act on notifications promptly</p>
+<p><strong>Map View:</strong>
+- Plan property visits efficiently
+- Group nearby properties for inspections
+- Show portfolio to partners/investors</p>
+<p><strong>Email Integration:</strong>
+- Pre-filled templates save time
+- One-tap sending to tenants
+- Professional appearance</p>
+<h3 id="common-pitfalls-to-avoid">Common Pitfalls to Avoid</h3>
+<p>❌ <strong>Not entering email addresses</strong> → Can't send invoices electronically<br />
+✅ Enter all tenant emails in Property details</p>
+<p>❌ <strong>Forgetting to mark invoices as paid</strong> → Inaccurate reports<br />
+✅ Update payment status immediately when received</p>
+<p>❌ <strong>Inconsistent expense categorization</strong> → Difficult tax preparation<br />
+✅ Use same categories throughout year</p>
+<p>❌ <strong>Skipping VAT reports</strong> → Scrambling at tax time<br />
+✅ Generate monthly, even if filing quarterly</p>
+<p>❌ <strong>Not backing up data</strong> → Risk of loss<br />
+✅ Export CSV reports regularly</p>
+<h3 id="data-backup-strategy">Data Backup Strategy</h3>
+<p><strong>Regular Exports:</strong>
+1. Monthly VAT CSV export
+2. Annual property listing export (if available)
+3. Save to cloud storage (iCloud, Dropbox, Google Drive)</p>
+<p><strong>Device Backups:</strong>
+1. Enable iCloud backup for app data
+2. Or use iTunes/Finder backup
+3. Test restore occasionally</p>
+<p><strong>Important</strong>: Crassus Pro data stored locally on device. Regular backups essential.</p>
+<h3 id="getting-help">Getting Help</h3>
+<p><strong>In-App Issues:</strong>
+- Check Settings &gt; About for app version
+- Restart app if experiencing problems
+- Update to latest version via App Store</p>
+<p><strong>Technical Support:</strong>
+- Contact support via App Store listing
+- Include app version and iOS version
+- Describe issue with screenshots if possible</p>
+<p><strong>Feature Requests:</strong>
+- Suggest improvements via App Store review
+- Or contact developer directly
+- Future updates may include requested features</p>
+<h3 id="legal-tax-considerations">Legal &amp; Tax Considerations</h3>
+<p><strong>Disclaimer</strong>: Crassus Pro is a property management tool, not tax or legal advice. Always consult with:
+- Licensed tax professional for tax matters
+- Lawyer for legal questions
+- Accountant for financial advice</p>
+<p><strong>Your Responsibilities:</strong>
+- Accurate data entry
+- Timely VAT filing
+- Compliance with local laws
+- Record keeping per regulations</p>
+<p><strong>Crassus Pro Provides:</strong>
+- Data organization tools
+- VAT calculation assistance
+- Record keeping system
+- Not professional advice</p>
+<hr />
+<h2 id="appendix-quick-reference">Appendix: Quick Reference</h2>
+<h3 id="navigation-bar">Navigation Bar</h3>
+<ul>
+<li>🏛️ <strong>Properties</strong>: View/manage all properties</li>
+<li>🌍 <strong>Imperium</strong>: Map view of portfolio</li>
+<li>📄 <strong>Invoices</strong>: All rent invoices</li>
+<li>💳 <strong>Expenses</strong>: Track property expenses</li>
+<li>📊 <strong>VAT</strong>: Generate tax reports</li>
+</ul>
+<h3 id="status-colors">Status Colors</h3>
+<ul>
+<li>🟢 <strong>Green</strong>: Paid, no action needed</li>
+<li>🟠 <strong>Orange</strong>: Due within 3 days</li>
+<li>🔴 <strong>Red</strong>: Overdue, action required</li>
+<li>⚪ <strong>Gray</strong>: Future/not yet due</li>
+</ul>
+<h3 id="keyboard-shortcuts-ipad">Keyboard Shortcuts (iPad)</h3>
+<p>If using external keyboard with iPad:
+- <strong>Cmd+N</strong>: New property/invoice/expense
+- <strong>Cmd+S</strong>: Save current item
+- <strong>Cmd+W</strong>: Close current view
+- <strong>Cmd+,</strong>: Open Settings</p>
+<h3 id="invoice-languages">Invoice Languages</h3>
+<p>Available invoice language options:
+- 🇳🇱 Dutch (Nederlands)
+- 🇬🇧 English
+- 🇩🇪 German (Deutsch)
+- 🇫🇷 French (Français)
+- 🇪🇸 Spanish (Español)
+- 🇮🇹 Italian (Italiano)</p>
+<hr />
+<h2 id="support-updates">Support &amp; Updates</h2>
+<p><strong>Crassus Pro Version</strong>: 1.0.0<br />
+<strong>Last Updated</strong>: November 2025</p>
+<p><strong>Stay Updated:</strong>
+- Enable automatic App Store updates
+- Check for new versions regularly
+- Review release notes for new features</p>
+<p><strong>Questions?</strong>
+- Review this guide for answers
+- Check Settings for app information
+- Contact support via App Store</p>
+<hr />
+<p><strong>Thank you for choosing Crassus Pro!</strong></p>
+<p><em>"Conquer your property empire with confidence."</em> 🏛️</p>
+<hr />
+<p><em>This guide covers Crassus Pro version 1.0.0. Features and interface may change in future updates.</em></p>                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-apple-gray text-white py-8 sm:py-12 mt-12 sm:mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-apple-gray-light">© 2025 Crassus Pro. All rights reserved.</p>
+            <p class="text-apple-gray-light text-sm mt-2">Version 1.0.0</p>
+            <p class="text-apple-gray-light text-sm mt-4">
+                <a href="crassus-pro-tailwind.html" class="hover:text-crassus-orange transition">Home</a> | 
+                <a href="#getting-started" class="hover:text-crassus-orange transition">User Guide</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="fixed bottom-8 right-8 bg-crassus-orange text-white w-12 h-12 rounded-full shadow-lg hover:bg-crassus-orange-dark transition opacity-0 pointer-events-none">
+        ↑
+    </button>
+
+    <script>
+        // Smooth scroll and active TOC highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const sections = document.querySelectorAll('#guide-content h2');
+            const scrollTopBtn = document.getElementById('scrollTop');
+
+            // Active TOC highlighting on scroll
+            function highlightTOC() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const scrollPos = window.pageYOffset + 150;
+                    if (scrollPos >= sectionTop) {
+                        current = section.id;
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightTOC);
+            highlightTOC(); // Initial call
+
+            // Scroll to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>
